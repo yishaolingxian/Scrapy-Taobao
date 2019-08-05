@@ -70,6 +70,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
+    'Taobao.pipelines.LogPipeline': 301,
     'Taobao.pipelines.TaobaoPipeline': 301,
     'Taobao.pipelines.MongoPipeline': 302,
     'Taobao.pipelines.MysqlPipeline': 303,
@@ -108,3 +109,6 @@ MYSQL_PASSWORD = '123456'
 MYSQL_PORT = 3306
 
 PROXY_URL = 'http://localhost:5555/random'
+
+LOG_FILE = "taobao.log"
+LOG_LEVEL = "WARNING"
