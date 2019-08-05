@@ -8,6 +8,14 @@
 from openpyxl import Workbook
 import pymongo
 import pymysql
+import logging
+
+logger = logging.getLogger(__name__)
+
+class LogPipeline(object):
+    def process_item(self, item, spider):
+        logging.warning("*-*pipeline的warning信息*-*")
+        return item
 
 
 class TaobaoPipeline(object):
